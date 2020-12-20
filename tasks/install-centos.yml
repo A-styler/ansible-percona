@@ -12,7 +12,7 @@
 
 # https://www.percona.com/doc/percona-server/LATEST/installation/yum_repo.html
 - name: "Enable Percona repository (Percona version >= 8)"
-  command: "percona-release setup ps{{ mysql_version_major }}{{ mysql_version_minor }}"
+  command: "percona-release setup ps{{ mysql_version_major }}{{ mysql_version_minor }} -y"
   when: mysql_version_major|int >= 8 and install_rpm_repositories|bool
  
 - name: "Install percona database server (Percona version < 8)"
